@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aemsanfrancisco - Asociación de Estudiantes de Medicina UASD Recinto San Francisco</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, rgba(235, 255, 162, 0.9), rgba(224, 242, 247, 0.9)), url('img/fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        /* Delays for chained appearance */
+        .fade-delay-1 {
+            animation-delay: 0.3s;
+        }
+        .fade-delay-2 {
+            animation-delay: 0.6s;
+        }
+        .fade-delay-3 {
+            animation-delay: 0.9s;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .logo-container img.logo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .aems-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #003366;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .profile-pic {
+            width: 300px;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #fff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .description-text {
+            font-size: 1.1em;
+            color: #444;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .link-buttons-container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        /* Hover animation on buttons */
+        .link-button {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333333;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            width: calc(100% - 40px);
+            box-sizing: border-box;
+            transform: scale(1);
+        }
+
+        .link-button:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: scale(1.05);
+        }
+
+        .link-button i {
+            margin-right: 15px;
+            font-size: 1.4em;
+        }
+
+        .link-button .fa-instagram {
+            color: #E1306C;
+        }
+
+        .link-button .fa-whatsapp {
+            color: #25D366;
+        }
+
+        .link-button .fa-google-drive {
+            color: #FFC107;
+        }
+
+        .link-button .fa-globe,
+        .link-button .fa-file-text {
+            color: #007bff;
+        }
+
+        .link-button .fa-envelope {
+            color: #D44638;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            padding-bottom: 20px;
+        }
+
+        footer a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .aems-text {
+                font-size: 2em;
+            }
+            .subtitle {
+                font-size: 1em;
+            }
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+            .description-text {
+                font-size: 1em;
+            }
+            .link-buttons-container {
+                width: 80%;
+                margin: 0 auto;
+            }
+            .link-button {
+                font-size: 1em;
+                padding: 12px 15px;
+            }
+            .link-button i {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container {
+                width: 100px;
+                height: 100px;
+            }
+            .aems-text {
+                font-size: 1.8em;
+            }
+            .subtitle {
+                font-size: 0.9em;
+            }
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+            .description-text {
+                font-size: 0.9em;
+            }
+            .link-buttons-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="fade-in fade-delay-1">
+        <div class="logo-container">
+            <img src="img/logo.jpg" alt="Logo AEMS" class="logo-image">
+        </div>
+        <h1 class="aems-text">aemsanfrancisco</h1>
+        <p class="subtitle">Asociación de Estudiantes de Medicina UASD Recinto San Francisco</p>
+    </header>
+
+    <section class="profile-section fade-in fade-delay-2">
+        <img src="img/portada.jpg" alt="Foto de Estudiantes de Medicina" class="profile-pic">
+        <p class="description-text">
+            Conectando estudiantes, compartiendo conocimientos y fortaleciendo nuestra vocación médica.
+        </p>
+    </section>
+
+    <section class="link-buttons-container fade-in fade-delay-3">
+        <a href="https://www.instagram.com/aemsanfrancisco/" target="_blank" class="link-button">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://chat.whatsapp.com/KTNmtg3I6CHCfezx8rQJMx" target="_blank" class="link-button">
+            <i class="fab fa-whatsapp"></i> Únete a nuestro grupo
+        </a>
+        <a href="https://drive.google.com/drive/u/2/folders/15u2k0_f482-O5QawS09MdImAXfG3QLcv" target="_blank" class="link-button">
+            <i class="fab fa-google-drive"></i> Recursos académicos
+        </a>
+    </section>
+
+    <footer class="fade-in fade-delay-3">
+        <p>
+            © 2025 Asociación de Estudiantes de Medicina UASD Recinto San Francisco – aemsanfrancisco
+        </p>
+        <p>
+            Desarrollado con &#x2764; por estudiantes de medicina
+        </p>
+        <p>
+            <a href="mailto:aemsanfrancisco@gmail.com">Contacto</a>
+        </p>
+    </footer>
+</body>
+
+</html>
